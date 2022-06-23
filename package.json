@@ -19,6 +19,14 @@
   ],
   "author": "kricsleo",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kricsleo/vite-plugin-sentry-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kricsleo/vite-plugin-sentry-cli/issues"
+  },
+  "homepage": "https://github.com/kricsleo/vite-plugin-sentry-cli",
   "dependencies": {
     "@sentry/cli": "^2.2.0",
     "rimraf": "^3.0.2"
@@ -29,8 +37,7 @@
     "rollup": "^2.75.7",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-typescript2": "^0.32.1",
-    "typescript": "^4.7.4",
-    "vite": "^2.9.12"
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "vite": "^2.9.12"

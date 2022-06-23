@@ -5,6 +5,7 @@ import type {
   SentryCliUploadSourceMapsOptions,
   SentryCliNewDeployOptions
 } from '@sentry/cli'
+// @ts-ignore
 import type { Plugin, ResolvedConfig } from 'vite';
 import SentryCli from '@sentry/cli';
 import rimraf from 'rimraf'
