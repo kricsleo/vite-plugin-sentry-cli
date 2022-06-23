@@ -1,0 +1,41 @@
+{
+  "name": "vite-plugin-sentry-cli",
+  "version": "1.0.0",
+  "description": "A plugin for Vite ⚡️ to upload sourcemap to Sentry",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c && tsc --emitDeclarationOnly",
+    "dev": "NODE_ENV=develop rollup -c"
+  },
+  "keywords": [
+    "vite",
+    "sentry",
+    "plugin"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "kricsleo",
+  "license": "MIT",
+  "dependencies": {
+    "@sentry/cli": "^2.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@types/rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12"
+  },
+  "peerDependencies": {
+    "vite": "^2.9.12"
+  },
+  "engines": {
+    "node": ">= 12"
+  }
+}
