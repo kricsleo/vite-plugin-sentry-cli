@@ -15,7 +15,8 @@
     "plugin"
   ],
   "files": [
-    "dist"
+    "dist",
+    "client.d.ts"
   ],
   "author": "kricsleo",
   "license": "MIT",
@@ -37,7 +38,8 @@
     "rollup": "^2.75.7",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-typescript2": "^0.32.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12"
   },
   "peerDependencies": {
     "vite": "^2.9.12"

@@ -19,7 +19,6 @@ yarn add -D vite-plugin-sentry-cli
 
 It should be configed in the [`vite.config.ts`](https://vitejs.dev/config/)(or something else you named it in your project).
 
-- the mini
 ```ts
 import { defineConfig } from 'vite';
 import { vitePluginSentryCli } from 'vite-plugin-sentry-cli'
@@ -27,6 +26,7 @@ import { vitePluginSentryCli } from 'vite-plugin-sentry-cli'
 export default defineConfig({
   plugins: [
     //...
+    // the minimun required config
     vitePluginSentryCli({
       url: '<your_sentry_url>',
       org: '<your_sentry_orgination>',
@@ -40,16 +40,16 @@ export default defineConfig({
 
 ## Default behaviour
 
-1. `cleanLocal: true`
+1. `clean: true`
 
-  After sourcemap is uploaded, it will delete local `*.js.map` files by default, to avoid publish these sourcemap to the production during your following steps.
+  After sourcemap is uploaded, **it will delete local `*.js.map` files by default**, to avoid publish these sourcemap to the production during your following steps.
 
   If you want to keep them, set it to `false`.
 
 
-2. `cleanRemote: true`
+2. `delete: true`
 
-  Before upload sourcemap, it will delete all previous sourcemap files in the same `release`, it's just better for your server storage and would be cleaner in a release(just in my point).
+  Before upload sourcemap, **it will delete all previous sourcemap files in the same `release` by default**, it's just better for your server storage and would be cleaner in a release(just in my point).
 
   If you want to keep them in your Senrtry, set it to `false`.
 
@@ -57,7 +57,19 @@ export default defineConfig({
 
 - What's `release`?
 
-  It will auto generate `release` using `Sentry-cli.`
+  When no `release` is configged, it will generate a `release` by `SentryCli.releases.proposeVersion()`(the project should be a `git` repository in this situation), an auto-generated `release` is the lastest commit hash.
+
+  You can also use the `release` in your source code with `import.meta.env.SENTRY_RELEASE`(It's automaticly injected). When you configged  your own `release`, this variable will be the value as you configged.
+
+  For `ts` support, you can add this config to your `tsconfig.json`
+
+  ```
+  {
+    "compilerOptions": {
+      "types": ["vite-plugin-sentry-cli/client"]
+    }
+  }
+  ```
 
 - What's `authToken` and how can I get one?
 
