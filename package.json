@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "NODE_ENV=production rollup -c && tsc --emitDeclarationOnly",
     "dev": "NODE_ENV=develop rollup -c"

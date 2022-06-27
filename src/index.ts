@@ -144,7 +144,6 @@ export function vitePluginSentryCli(options: VitePluginSentryCliOptions) {
       }
       !isProduction && this.warn(`Running in non-production mode: ${mode}`)
       try {
-        const version = await cli.releases.proposeVersion()
         // create a new release
         await cli.releases.new(release)
         // delete previous releases
