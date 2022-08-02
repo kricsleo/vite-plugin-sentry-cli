@@ -153,7 +153,7 @@ export function vitePluginSentryCli(options: VitePluginSentryCliOptions) {
         )
         // upload sourcemap
         const include = sourcemap?.include || [normalize(`./${build.outDir}/${build.assetsDir}`)]
-        const urlPrefix = sourcemap?.urlPrefix || normalize(`~${env.BASE_URL}/${include}/`)
+        const urlPrefix = sourcemap?.urlPrefix || normalize(`~${env.BASE_URL}/${build.assetsDir}/`)
         await cli.releases.uploadSourceMaps(release, { ...sourcemap, include, urlPrefix })
         // set commits
         const shouldCommit = commits?.auto || (commits?.repo && commits?.commit)
