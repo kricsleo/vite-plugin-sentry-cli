@@ -1,5 +1,9 @@
 # A plugin for intergrating `Sentry` to `Vite ⚡️`
 
+<h2 style="color: red">
+Deprecated: please refer to <a href="https://github.com/kricsleo/unplugin-sentry">unplugin-sentry</a>
+</h2>
+
 It can upload sourcemap files to `Sentry` during compiling, so that when debugging issues in `Sentry`, you can reveal the source code.
 
 It's designed for `Vite`, if you need to use it in `Webpack`, please see [`I haven't finished yet`](#)
